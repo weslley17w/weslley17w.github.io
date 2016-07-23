@@ -1,0 +1,22 @@
+CACHE MANIFEST
+# v1 - 2011-08-13
+# This is a comment.
+index.html
+
+#CSS
+
+assets/css/androidstudio.min.css
+assets/css/font-awesome.min.css
+assets/css/main.css
+
+#JS
+
+assets/js/blazy.min.js
+assets/js/higlight.min.js
+assets/js/jquery.min.js
+assets/js/main.js
+assets/js/skel.min.js
+assets/js/util.js
+
+NETWORK:
+*

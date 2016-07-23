@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Weslley Barros | Desenvolvedor Front-End e Back-End</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>https://weslleybarros.com.br/</link>
+    <atom:link href="https://weslleybarros.com.br/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 23 Jul 2016 20:01:18 -0300</pubDate>
+    <lastBuildDate>Sat, 23 Jul 2016 20:01:18 -0300</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Resumo Aula 2 MongoDB</title>
+        <description>&lt;p&gt;Olá pessoal nessa segunda aula nós vamos falar sobre use, insert, save e cursor..&lt;/p&gt;
+
+&lt;h1 id=&quot;use&quot;&gt;# Use&lt;/h1&gt;
+
+&lt;p&gt;Vamos lá se você abrir seu terminal subi servido e digitar mongo ira subi client do mongodb por padrão ele irá abrir a database test, mas se eu não quiser usa essa datadabe? Simples à duas maneiras a primero e essa:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mongo
+MongoDB shell version: 3.0.7
+connecting to: &lt;span class=&quot;nb&quot;&gt;test
+&lt;/span&gt;Mongo-Hacker 0.0.9
+use sua-db
+switched to db sua-db
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;pronto, simples né? Tem outra maneira mas simples ainda:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mongo sua-db
+MongoDB shell version: 3.0.7
+connecting to: sua-db
+Mongo-Hacker 0.0.9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Essa é a que minha pessoa prefere, mais isso vai de sua pessoa à que você preferir você usa. Nessa hora se você não conhece mongodb e está acostumado com o relacional deve está me chamando de louco porquê estou ensinando você dá um use database sem ensina como criar uma, mas fique tranquilo que no mongo quando você da um “mongo sua-database” ou “use sua-database” ele “cria ela” está entre parentes pq ele cria um database temporal ele so vai criar ela definitivamente quando você inserir dados em sua database.&lt;/p&gt;
+
+&lt;h1 id=&quot;insert&quot;&gt;#insert&lt;/h1&gt;
+&lt;p&gt;Agora que nós já aprendemos criar nossa database vamos inserir dados nela, o insert e tão simples como andar de bicicleta, se você conhece json então nem se fala. Então vamos ao codigo.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo minhadb
+var suavar &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;nome&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;Weslley&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;idade&quot;&lt;/span&gt;: 17&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+db.collection.insert&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;suavar&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+// Retornara algo &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;tipo:
+
+Inserted 1 record&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;505ms
+WriteResult&lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;nInserted&quot;&lt;/span&gt;: 1
+&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;find&quot;&gt;#Find&lt;/h1&gt;
+
+&lt;p&gt;Agora que você sabe inserir dados em sua database, então vamos listalos.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; mongo suadb
+ db.suacolecao.find&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Pronto com isso você listou sua coleção, você deve ter percebido que listou todos dados  da sua coleção caso você queira fazer um “WHERE” no mongo você cria um json com a regra:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; mongo suadb
+ var query &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;nome&#39;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;Weslley Barros&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+ db.suacoleção.find&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;query&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Com isso você só retornara todos resultados com nome Weslley Barros&lt;/p&gt;
+
+&lt;h1 id=&quot;save&quot;&gt;#Save&lt;/h1&gt;
+
+&lt;p&gt;O insert e o save não e muito diferente ele consegue inserir dados na sua coleção igual o insert mas ele tem um recurso especial ele serve pra editar támbem então vamos aprender na linha de comando:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo minhadb
+var query &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;nome&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;Weslley&quot;&lt;/span&gt;, &lt;span class=&quot;s2&quot;&gt;&quot;idade&quot;&lt;/span&gt;: 17&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+db.suacolecao.save&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;query&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;ae guri conseguio inserir dados em seu banco de dados de outra forma. Mas como eu falei o save não serve só pra inserir, serve támbem para editar dados. Para isso nos precisamos primeiro salva dados em uma variavel depois edita-lo e por fim salvar.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo minhadb
+var query &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;idade&quot;&lt;/span&gt;: 17&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+var edt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; db.suacoleção.findOne&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;query&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;;
+edt.idade &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 18
+db.suacoleção.save&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;edt&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Pronto com isso você editor.Você percebeu que eu usei o findOne e não find isso porque eu find retorna de forma de curso vamos ver isso logo abaixo, o findOne retorna um Json com isso fica mais fácil editar eles como você viu logo acima.&lt;/p&gt;
+
+&lt;h1 id=&quot;curso&quot;&gt;#Curso&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt;
+A pointer to the result set of a query. Clients can iterate through a cursor to retrieve&lt;/p&gt;
+
+  &lt;p&gt;Um ponteiro para o conjunto de resultados de uma consulta. Os clientes podem interagir através de um cursor para obter resultados. Por padrão, cursores expiram depois de 10 minutos de inatividade.&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;Font:&lt;/strong&gt; https://docs.mongodb.org/v3.0/reference/glossary/#term-cursor&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Vamos ao código:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var c &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; db.suacolecao.find&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; a.hasNext&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+   print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+      tojson&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;a.next&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Notas do tio Weslley:&lt;/strong&gt;
+O find e temporário ou seja você usa uma vez e ele limpa ou seja se você vai c = db.suacolecao.find() e depois c no terminal vai ter retorna nada experiencia propia fiquei umas meia hora fazendo isso :’)&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 19 Dec 2015 08:18:07 -0200</pubDate>
+        <link>https://weslleybarros.com.br/posts/resumo-aula-2-mongodb</link>
+        <guid isPermaLink="true">https://weslleybarros.com.br/posts/resumo-aula-2-mongodb</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Resumo Aula 1 MongoDB</title>
+        <description>&lt;p&gt;Nessa primeira aula nós vamos fica apenas na teoria, Resumo rapido vamos fala sobre bancos NoSQL.&lt;/p&gt;
+
+&lt;p&gt;Nosql são bancos não relacionais ao contrário de que muitos pensam eles não são bancos que não usa “SQL”, Acredite se quiser existe banco nosql que usa sql para fazer consultas.&lt;/p&gt;
+
+&lt;h2 id=&quot;alguns-exemplos-de-bancos-nosql-que-usa-sql-so-o-casandra-e-o-orientdb&quot;&gt;Alguns exemplos de bancos nosql que usa SQL são o Casandra e o OrientDB:&lt;/h2&gt;
+
+&lt;p&gt;vamos a alguns comandos do Cassandra&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;syntax&quot;&gt;Syntax&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;USE mykeyspace;
+
+CREATE TABLE users (
+user_id int PRIMARY KEY,
+fname text,
+lname text
+);
+
+
+INSERT INTO users (user_id,  fname, lname)
+VALUES (1745, &#39;john&#39;, &#39;smith&#39;);
+INSERT INTO users (user_id,  fname, lname)
+VALUES (1744, &#39;john&#39;, &#39;doe&#39;);
+INSERT INTO users (user_id,  fname, lname)
+VALUES (1746, &#39;john&#39;, &#39;smith&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;vamos a alguns comandos do OrientDB&lt;/p&gt;
+
+&lt;h2 id=&quot;syntax-1&quot;&gt;Syntax&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT [&amp;lt;Projections&amp;gt;] [FROM &amp;lt;Target&amp;gt; [LET &amp;lt;Assignment&amp;gt;*]]
+[WHERE &amp;lt;Condition&amp;gt;*]
+[GROUP BY &amp;lt;Field&amp;gt;*]
+[ORDER BY &amp;lt;Fields&amp;gt;* [ASC|DESC] *]
+[SKIP &amp;lt;SkipRecords&amp;gt;]
+[LIMIT &amp;lt;MaxRecords&amp;gt;]
+[FETCHPLAN &amp;lt;FetchPlan&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt;
+Isso lhe lembra á alguma coisa ? 
+“ae muleque se é pika mesmo em ! “&lt;br /&gt;
+Claro que lhe lembra o Sql ou Mysql, postgresql, Sql Server…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;e-agora-tiro-da-sua-cabecinha-que-nosql-no-significa-no-sql&quot;&gt;E agora tiro da sua cabecinha que nosql não significa “NÃO SQL”&lt;/h2&gt;
+
+&lt;p&gt;Então o que e nosql? ao contrário de banco relacionais que são genericos serve pra tudo que você queira criar exemplos um grafico, sistema de cache e por ai vai.&lt;/p&gt;
+
+&lt;p&gt;O banco nosql e diferente e feito para resolver problemas específicos por esse motivo que tem vários tipos de bancos nosql mas fica “sussa”  ae que já nós chega lá, Outra grande diferença e que no banco relacional nos criamos “Regras” antes de começar à inserir dados nele, mas como assim regras Sr Weslley? Ex: Quando criamos um banco mysql para nossa aplicação, nos primeiro criamos o banco em si depois criamos tabelas e depois colunas e criamo uma regra (id -&amp;gt; int -&amp;gt; auto increment ), (name -&amp;gt;varchar -&amp;gt;  length = 255)  isso eu chamo de “Regra” eu acho isso bom pois não te deixa fazer merda no sistema pois não permite nos coloca um valor type text no luga de um de int exemplo, já alguns de nosso bancos nosql deixa nos fazer essa proeza o Mongo e um forte exemplo disso é também á maioria dos bancos nosql não usa joins isso eu acho chato pois temos que mudar toda nossa logica para modelar um banco nosql mas nós se acostumamos rápido. Como já falei bancos nosql são divididos em grupos:&lt;/p&gt;
+
+&lt;h2 id=&quot;chavevalor&quot;&gt;#Chave/Valor&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Berkeley DB&lt;/li&gt;
+  &lt;li&gt;Tokyo Cabinet&lt;/li&gt;
+  &lt;li&gt;Project Valdermort&lt;/li&gt;
+  &lt;li&gt;MemcacheDB&lt;/li&gt;
+  &lt;li&gt;SimpleDB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;orientados-a-documentos&quot;&gt;#Orientados a Documentos&lt;/h2&gt;
+
+&lt;p&gt;Baseado em documentos XML ou Json, podem ser localizados pelo id único ou por qualquer registro que tenha no documento&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CouchDB&lt;/li&gt;
+  &lt;li&gt;MongoDB&lt;/li&gt;
+  &lt;li&gt;Riak&lt;/li&gt;
+  &lt;li&gt;RevenDB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;orientado-a-grficos&quot;&gt;#Orientado a Gráficos&lt;/h2&gt;
+
+&lt;p&gt;São bancos orientados a gráficos ou seja serve pra cria gráfico&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;BigTable&lt;/li&gt;
+  &lt;li&gt;Neo4J&lt;/li&gt;
+  &lt;li&gt;Cassandra&lt;/li&gt;
+  &lt;li&gt;HiperTable&lt;/li&gt;
+  &lt;li&gt;Hbase&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mistos&quot;&gt;#Mistos&lt;/h2&gt;
+
+&lt;p&gt;Esses são a porra loca eles meio que são parecido com os relacional pois eles servem para para resolver varios problemas&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OrientDB&lt;/li&gt;
+  &lt;li&gt;ArangoDB&lt;/li&gt;
+  &lt;li&gt;FoundationDB&lt;/li&gt;
+  &lt;li&gt;CloudBoost.io&lt;/li&gt;
+  &lt;li&gt;MarkLogic&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;agora-que-sabemos-o-que-e-nosql&quot;&gt;Agora Que sabemos o que e nosql!&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://geradormemes.com/media/created/30hyyi.gif&quot; alt=&quot;Imagem engraçada&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Primeiro vamos instalar o mongo ne jovens, pretendo criar um artigo passo a passo ensinado instalar mongo no Windows e no Linux(Ubuntu) mas isso deixa pra depois, Hoje vamos deixa link da documentação do mongo ensinado.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mongodb.org/downloads#production&quot;&gt;Download Mongo&lt;/a&gt; e seja feliz.&lt;/p&gt;
+
+&lt;h2 id=&quot;terminologia-mongo&quot;&gt;Terminologia Mongo&lt;/h2&gt;
+&lt;p&gt;Relacional     |  –&amp;gt; NoSQL
+————– |  ——————–
+DATABASE       |  –&amp;gt; DATABASE
+TABLE          |  –&amp;gt; COLLECTION
+ROWS           |  –&amp;gt;  DOCUMENT JSON
+QUERY          |  –&amp;gt; QUERY
+INDEX          |  –&amp;gt; INDEX
+PARTITION      |  –&amp;gt;  SHARD&lt;/p&gt;
+
+&lt;h2 id=&quot;comandos&quot;&gt;#Comandos&lt;/h2&gt;
+&lt;p&gt;Comandos aprendidos na aula&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongod - levanta servido mongo
+mongo - levanta cliente mongo
+mongoimport - importa um coleção
+mongoexport - exporta um coleção  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Mas como se usa o mongo import e export ? Isso lhe responde ?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;mongoexport –db nome_do_database –collection nome_da_colecao –out minha_colecionismo&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;mongoimport –db database –collection collection –drop –file data.json&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Dec 2015 23:39:11 -0200</pubDate>
+        <link>https://weslleybarros.com.br/posts/resumo-aula-1-mongodb</link>
+        <guid isPermaLink="true">https://weslleybarros.com.br/posts/resumo-aula-1-mongodb</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Mongo Hacker No Windows</title>
+        <description>&lt;h1 id=&quot;instala-mongo-hacker-windows&quot;&gt;Instala mongo-hacker Windows&lt;/h1&gt;
+
+&lt;p&gt;Comecei o curso ontem e tive um grande problema com o mongo-hacker, passei tarde toda procurando uma solução e finalmente achei. E estou aqui para compartilha-la com vocês para começar já deveremos ter:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;git e gitbash&lt;/li&gt;
+  &lt;li&gt;nodejs&lt;/li&gt;
+  &lt;li&gt;mongo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Então vamos começar baixando o comando make que o “Ruindows” não nos oferece nativamente, eu recomendo o &lt;a href=&quot;https://github.com/user/repo/blob/branch/other_file.md&quot;&gt;GNUWIN &lt;/a&gt; basta baixar ‘Complete package, except sources’. Depois de baixa-lo e instalá-lo vamos adiciona o arquivo no Path.&lt;/p&gt;
+
+&lt;p&gt;Primeiro vamos procurar a pasta raiz onde se localiza o make geralmente fica em 
+“C &amp;gt; Program Files (x86) &amp;gt; GnuWin32 &amp;gt;bin” resumindo “C:\Program Files (x86)\GnuWin32\bin”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/KjWOlNy.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Caso você ache um ícone chifrudo com nome make deu tudo certo basta copiar url. Então vamos ao host caso você use Windows 8, 8.1 e 10 siga este passo caso use outra versão pesquise no Pai-dos-burros(Google) “Como mudar o PATH nos Windows”. Quem usa o 8, 8.1 e 10 siga em frente&lt;/p&gt;
+
+&lt;p&gt;Click com o botão direito do seu mouse na bandeira do Windows.
+&lt;img src=&quot;http://i.imgur.com/ihc8NHy.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click em sistema&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/pvOPXK8.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clique em Configurações Avançadas&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/fsAymza.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Variáveis de ambiente…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/kXxgsf8.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Selecione path e clique em editar&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/hW31Hl7.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Vá até final da linha coloque um “ ; ” (Ponto e virgula)no final caso não aja e cole o diretório que nos acho lá em cima&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/lrgWeed.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pronto instalamos o make no Windows agora vamos testa abra o GIT BASH pelo amor de tudo que e mais sagrado, Não use o CMD(aquela porcaria). Com o git bash aberto digite&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/b4Tnhc2.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Caso receba essa mensagem tudo deu certo, caso não aparece essa mensagem reinicia Windows e digite de novo.&lt;/p&gt;
+
+&lt;p&gt;Agora vamos instala o mongo-hacker. Primeiro clone o repositório na pasta dos repositórios do npp para organiza&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;C:\Users\wesll\AppData\Roaming\npm\node_modules&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;obs: caso a pasta node_modules não exista, você deve cria-la&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;C:\Users\wesll\AppData\Roaming\npm\&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;mkdir node_modules
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;node_modules
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dentro da pasta node_modules no terminal&lt;/p&gt;
+
+&lt;p&gt;Clone o repositório&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/TylerBrock/mongo-hacker.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Agora vamos configura ló para não ficar exibindo umas mensagens de erro chata&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;mongo-hacker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;notepad config.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Agora vamos mudar duas variáveis á windows_warning e force_color 
+á windows_warning ficara false e force_color true&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/GowCCAl.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Agora só instalar o mongo hacker com o&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Pronto mongo-hacker instalado com sucesso&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/xEx3QKW.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;aeeeeeeeeeee agora nosso console fico ‘bunitinho’&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 09 Dec 2015 10:32:45 -0200</pubDate>
+        <link>https://weslleybarros.com.br/posts/mongo-hacker-no-windows</link>
+        <guid isPermaLink="true">https://weslleybarros.com.br/posts/mongo-hacker-no-windows</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Hello World, Welcome to my “Brog”</title>
+        <description>&lt;p&gt;Esse e meu primeiro post nesse “Brog”, Que sou eu ? Apenas um Jovem Apaixonado por Progamação e pelo mundo Open Source. O que teremos aqui? De tudo um pouco mais será geralmente algo relacionado com progamação e Codificação (HTML,CSS,JS,NodeJS,Mongo…), Mais Weslley  pra que isso? Mas ora pra tentar compartilha o que eu sei. Tchau, ate breve&lt;/p&gt;
+</description>
+        <pubDate>Mon, 07 Dec 2015 23:25:40 -0200</pubDate>
+        <link>https://weslleybarros.com.br/posts/hello-world-welcome-to-my-brog</link>
+        <guid isPermaLink="true">https://weslleybarros.com.br/posts/hello-world-welcome-to-my-brog</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
