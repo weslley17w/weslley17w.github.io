@@ -11,7 +11,7 @@ assets/css/main.css
 
 #JS
 
-'assets/js/highlight.min.js
+assets/js/highlight.min.js
 assets/js/jquery.min.js
 assets/js/main.js
 assets/js/skel.min.js
