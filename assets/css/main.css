@@ -1620,11 +1620,11 @@
 			min-width: 320px;
 		}
 
-		p{width: 48%;}
+		p{width: 60%;}
 
-		h1{width: 48%;}
+		h1{width: 60%;}
 
-		h2{width: 48%;}
+		h2{width: 60%;}
 	}
 
 	body {
@@ -1720,10 +1720,10 @@
 
 			h1 {
 				font-size: 1.75em;
-				width: 50%;
+				width: 60%;
 			}
 
-			h2{width: 50%;}
+			h2{width: 60%;}
 
 		}
 
