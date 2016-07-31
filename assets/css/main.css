@@ -1620,11 +1620,7 @@
 			min-width: 320px;
 		}
 
-		p{width: 52%;}
-
-		h1{width: 52%;}
-
-		h2{width: 52%;}
+		p,h1,h2,code{width: 52%;}
 	}
 
 	body {
@@ -1723,7 +1719,7 @@
 				width: 52%;
 			}
 
-			h2{width: 52%;}
+			code,h2{width: 52%;}
 
 		}
 
