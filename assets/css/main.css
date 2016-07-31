@@ -1390,7 +1390,7 @@
 
 	@media screen and (max-width: 360px) {
 
-        
+
 		.row > * {
 			padding: 0 0 0 1em;
 		}
@@ -1618,6 +1618,7 @@
 
 		html, body {
 			min-width: 320px;
+			max-width: 480px;
 		}
 
 	}
