@@ -1623,6 +1623,8 @@
 		p{width: 48%;}
 
 		h1{width: 48%;}
+
+		h2{width: 48%;}
 	}
 
 	body {
@@ -1720,6 +1722,8 @@
 				font-size: 1.75em;
 				width: 50%;
 			}
+
+			h2{width: 50%;}
 
 		}
 
