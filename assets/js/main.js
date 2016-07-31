@@ -6,33 +6,6 @@
 
 (function($) {
 
-	$('form[name="formcontact"]').submit(function(){
-
-		var nome = $('input[name="nome"]').val();
-		var email = $('input[name="email"]').val();
-		var messagem = $('textarea[name="messagem"]').val();
-
-		var texto = "Nome: " + nome +"|Email: " + email + "|Mensagem:<br>" + messagem;
-
-		$.ajax({
-			url: "https://formspree.io/weslley17w@gmail.com",
-			method: "POST",
-			data: {message: texto,
-				_subject: "Email Do Blog"
-			},
-			dataType: "json"
-		}).done(function() {
-			alert( "Obrigado, irei lhe responder o mais rapido possivel !!!!!    :)" );
-		}).fail(function() {
-			alert( "Mas que porra não deu certo, " );
-		}).always(function() {
-			//alert( "complete" );
-		});
-
-		return false;
-
-	});
-
 	skel.breakpoints({
 		xlarge:	'(max-width: 1680px)',
 		large:	'(max-width: 1280px)',
@@ -45,15 +18,6 @@
 
 		var	$window = $(window),
 			$body = $('body');
-
-		// Disable animations/transitions until the page has loaded.
-		$body.addClass('is-loading');
-
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-loading');
-			}, 100);
-		});
 
 		// Touch?
 		if (skel.vars.touch)
