@@ -1618,8 +1618,9 @@
 
 		html, body {
 			min-width: 320px;
-			max-width: 480px;
 		}
+
+		p{width: 50%;}
 
 	}
 
