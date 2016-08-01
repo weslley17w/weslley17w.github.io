@@ -1729,7 +1729,7 @@
 		width: 100%;
 	    }
 
-    	 code,h2,hr{width: 100%;}
+		 blockquote,code,h2,hr{width: 100%;}
 
        }
 
@@ -1740,7 +1740,7 @@
 				width: 56%;
 			}
 
-			code,h2,hr{width: 56%;}
+			blockquote,code,h2,hr{width: 56%;}
 
 		}
 
