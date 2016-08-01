@@ -4,9 +4,15 @@ CACHE MANIFEST
 
 #HTML
 index.html
-{% for page in site.posts %}
+
 F
-{% endfor %}
+
+F
+
+F
+
+F
+
 
 #CSS
 
