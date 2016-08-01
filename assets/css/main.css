@@ -1614,14 +1614,23 @@
 		-ms-overflow-style: scrollbar;
 	}
 
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 370px) {
 
 		html, body {
 			min-width: 320px;
 		}
 
-		p,h1,h2,code,hr{width: 52%;}
+		p,h1,h2,code,hr{width: 56%;}
 	}
+
+@media screen and (max-width: 480px) {
+
+	html, body {
+		min-width: 320px;
+	}
+
+	p,h1,h2,code,hr{width: 70%;}
+}
 
 	body {
 		background: #ffffff;
@@ -1712,14 +1721,26 @@
 
 		}
 
+
+     @media screen and (max-width: 500px) {
+
+	   h1 {
+		font-size: 1.75em;
+		width: 56%;
+	    }
+
+    	 code,h2,hr{width: 70%;}
+
+       }
+
 		@media screen and (max-width: 360px) {
 
 			h1 {
 				font-size: 1.75em;
-				width: 52%;
+				width: 56%;
 			}
 
-			code,h2,hr{width: 52%;}
+			code,h2,hr{width: 56%;}
 
 		}
 
