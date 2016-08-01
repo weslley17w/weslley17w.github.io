@@ -1729,7 +1729,8 @@
 		width: 80%;
 	    }
 
-		 blockquote,code,h2,hr{width: 80%;}
+		 h2,hr{width: 80%;}
+		 blockquote,code{width: 70%;}
 
        }
 
