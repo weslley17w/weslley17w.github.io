@@ -1726,10 +1726,10 @@
 
 	   h1 {
 		font-size: 1.75em;
-		width: 100%;
+		width: 80%;
 	    }
 
-		 blockquote,code,h2,hr{width: 100%;}
+		 blockquote,code,h2,hr{width: 80%;}
 
        }
 
