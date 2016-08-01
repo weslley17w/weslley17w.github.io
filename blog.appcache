@@ -5,13 +5,1096 @@ CACHE MANIFEST
 #HTML
 index.html
 
-F
+<!DOCTYPE HTML>
+<html lang="pt-br" manifest="https://weslleybarros.com.br/blog.appcache">
+   <head>
+   <meta charset="utf-8">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+   <link rel="alternate" href="https://weslleybarros.com.br" hreflang="pt-BR">
+   <link href="http://gmpg.org/xfn/11" rel="profile">
+   <meta name="HandheldFriendly" content="True">
+   <meta name="MobileOptimized" content="320">
+   <meta name="theme-color" content="#005344">
+   <title>Resumo Aula 2 MongoDB</title>
+   <meta name="google-site-verification" content="zS1dSn20XtA4FJYEOQLXqI0boxZdMnJ2g3beje-cl20">
+   <meta name="description" content="Resumo Aula 2 MongoDB">
+   <!-- Social: Facebook / Open Graph -->
+   <meta property="og:url" content="https://weslleybarros.com.br">
+   <meta property="og:title" content="Resumo Aula 2 MongoDB">
+   <meta property="og:description" content="Resumo Aula 2 MongoDB">
+   <meta property="og:site_name" content="Weslley Barros">
+   <meta property="og:locale" content="pt_BR">
+   <meta property="og:type" content="website">
+   <meta property="og:author" content="http://facebook.com/weslley17w">
+   <meta property="og:image" content="https://weslleybarros.com.br">
+   <!-- Social: Twitter -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@weslley17w">
+   <meta name="twitter:domain" content="https://weslleybarros.com.br">
+   <meta name="twitter:title" content="Resumo Aula 2 MongoDB">
+   <meta name="twitter:description" content="Resumo Aula 2 MongoDB">
+   <meta name="twitter:image:src" content="http://nandomoreira.me">
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="114x114" href="">
+   <link rel="apple-touch-icon" sizes="72x72" href="">
+   <link rel="apple-touch-icon" href="">
+   <link rel="shortcut icon" href="">
+   <link rel="canonical" href="https://weslleybarros.com.br">
+   <link rel="alternate" type="application/rss+xml" title="Weslley Barros" href="https://weslleybarros.com.br/feed.xml">
+   <link rel="icon" type="image/png" href="https://weslleybarros.com.br/assets/img/mug.png" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <!--[if lte IE 8]><script src="https://weslleybarros.com.br/assets/js/ie/html5shiv.js"></script><![endif]-->
+   <link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/main.css?version=3.2" />
+   <!--[if lte IE 9]><link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/ie9.css" /><![endif]-->
+   <!--[if lte IE 8]><link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/ie8.css" /><![endif]-->
+</head>
 
-F
+  <body>
+    <!-- Wrapper -->
+      <div id="wrapper">
 
-F
+        <!-- Header -->
+          <header id="header">
+            <div class="inner">
 
-F
+              <!-- Logo -->
+                <a href="index.html" class="logo">
+                  <span class="symbol"><img src="https://weslleybarros.com.br/assets/img/logo.jpg" alt="" /></span><span class="title">Weslley Barros</span>
+                </a>
+
+              <!-- Nav -->
+                <nav>
+                  <ul>
+                    <li><a href="#menu">Menu</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+            
+               <li><a href="/">Home</a></li>
+            
+               <li><a href="/feed">Feed</a></li>
+            
+            </ul>
+          </nav>
+
+        <!-- Main -->
+          <div id="main">
+            <div class="inner">
+            
+              <section class="tiles">
+              
+                				<!-- Main -->
+					<div id="main">
+						<div class="merda">
+							<h1>Resumo Aula 2 MongoDB</h1>
+							<p>Olá pessoal nessa segunda aula nós vamos falar sobre use, insert, save e cursor..</p>
+
+<h1 id="use"># Use</h1>
+
+<p>Vamos lá se você abrir seu terminal subi servido e digitar mongo ira subi client do mongodb por padrão ele irá abrir a database test, mas se eu não quiser usa essa datadabe? Simples à duas maneiras a primero e essa:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>mongo
+MongoDB shell version: 3.0.7
+connecting to: <span class="nb">test
+</span>Mongo-Hacker 0.0.9
+use sua-db
+switched to db sua-db
+</code></pre>
+</div>
+<p>pronto, simples né? Tem outra maneira mas simples ainda:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>mongo sua-db
+MongoDB shell version: 3.0.7
+connecting to: sua-db
+Mongo-Hacker 0.0.9
+</code></pre>
+</div>
+<p>Essa é a que minha pessoa prefere, mais isso vai de sua pessoa à que você preferir você usa. Nessa hora se você não conhece mongodb e está acostumado com o relacional deve está me chamando de louco porquê estou ensinando você dá um use database sem ensina como criar uma, mas fique tranquilo que no mongo quando você da um “mongo sua-database” ou “use sua-database” ele “cria ela” está entre parentes pq ele cria um database temporal ele so vai criar ela definitivamente quando você inserir dados em sua database.</p>
+
+<h1 id="insert">#insert</h1>
+<p>Agora que nós já aprendemos criar nossa database vamos inserir dados nela, o insert e tão simples como andar de bicicleta, se você conhece json então nem se fala. Então vamos ao codigo.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>mongo minhadb
+var suavar <span class="o">=</span>  <span class="o">{</span><span class="s2">"nome"</span>: <span class="s2">"Weslley"</span>, <span class="s2">"idade"</span>: 17<span class="o">}</span>
+db.collection.insert<span class="o">(</span>suavar<span class="o">)</span>
+
+// Retornara algo <span class="k">do </span>tipo:
+
+Inserted 1 record<span class="o">(</span>s<span class="o">)</span> <span class="k">in </span>505ms
+WriteResult<span class="o">({</span>
+  <span class="s2">"nInserted"</span>: 1
+<span class="o">})</span>
+</code></pre>
+</div>
+
+<h1 id="find">#Find</h1>
+
+<p>Agora que você sabe inserir dados em sua database, então vamos listalos.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code> mongo suadb
+ db.suacolecao.find<span class="o">()</span>
+</code></pre>
+</div>
+<p>Pronto com isso você listou sua coleção, você deve ter percebido que listou todos dados  da sua coleção caso você queira fazer um “WHERE” no mongo você cria um json com a regra:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code> mongo suadb
+ var query <span class="o">=</span> <span class="o">{</span><span class="s1">'nome'</span>: <span class="s2">"Weslley Barros"</span><span class="o">}</span>
+ db.suacoleção.find<span class="o">(</span>query<span class="o">)</span>
+</code></pre>
+</div>
+
+<p>Com isso você só retornara todos resultados com nome Weslley Barros</p>
+
+<h1 id="save">#Save</h1>
+
+<p>O insert e o save não e muito diferente ele consegue inserir dados na sua coleção igual o insert mas ele tem um recurso especial ele serve pra editar támbem então vamos aprender na linha de comando:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>mongo minhadb
+var query <span class="o">=</span> <span class="o">{</span><span class="s2">"nome"</span>: <span class="s2">"Weslley"</span>, <span class="s2">"idade"</span>: 17<span class="o">}</span>
+db.suacolecao.save<span class="o">(</span>query<span class="o">)</span>
+</code></pre>
+</div>
+<p>ae guri conseguio inserir dados em seu banco de dados de outra forma. Mas como eu falei o save não serve só pra inserir, serve támbem para editar dados. Para isso nos precisamos primeiro salva dados em uma variavel depois edita-lo e por fim salvar.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>mongo minhadb
+var query <span class="o">=</span> <span class="o">{</span><span class="s2">"idade"</span>: 17<span class="o">}</span>
+var edt <span class="o">=</span> db.suacoleção.findOne<span class="o">(</span>query<span class="o">)</span>;
+edt.idade <span class="o">=</span> 18
+db.suacoleção.save<span class="o">(</span>edt<span class="o">)</span>
+</code></pre>
+</div>
+
+<p>Pronto com isso você editor.Você percebeu que eu usei o findOne e não find isso porque eu find retorna de forma de curso vamos ver isso logo abaixo, o findOne retorna um Json com isso fica mais fácil editar eles como você viu logo acima.</p>
+
+<h1 id="curso">#Curso</h1>
+
+<blockquote>
+  <p><strong>Nota:</strong>
+A pointer to the result set of a query. Clients can iterate through a cursor to retrieve</p>
+
+  <p>Um ponteiro para o conjunto de resultados de uma consulta. Os clientes podem interagir através de um cursor para obter resultados. Por padrão, cursores expiram depois de 10 minutos de inatividade.</p>
+
+  <p><strong>Font:</strong> https://docs.mongodb.org/v3.0/reference/glossary/#term-cursor</p>
+</blockquote>
+
+<p><strong>Vamos ao código:</strong></p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>var c <span class="o">=</span> db.suacolecao.find<span class="o">()</span>
+
+<span class="k">while</span><span class="o">(</span> a.hasNext<span class="o">()</span> <span class="o">)</span> <span class="o">{</span> 
+   print<span class="o">(</span>
+      tojson<span class="o">(</span>a.next<span class="o">())</span>
+  <span class="o">)</span>
+<span class="o">}</span>;
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>Notas do tio Weslley:</strong>
+O find e temporário ou seja você usa uma vez e ele limpa ou seja se você vai c = db.suacolecao.find() e depois c no terminal vai ter retorna nada experiencia propia fiquei umas meia hora fazendo isso :’)</p>
+</blockquote>
+
+						</div>
+					</div>
+
+
+
+              </section>
+            
+
+            
+                 <div id="disqus_thread"></div>
+<script>
+    
+ 
+    var disqus_config = function () {
+        this.page.url = 'https://weslleybarros.com.br/posts/resumo-aula-2-mongodb';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://weslleybarros.com.br'; 
+        };
+   
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//weslley17w.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+            
+       
+            </div>
+          </div>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <section>
+                <h2>Entrar em Contato</h2>
+                <form name="formcontact">
+                  <div class="field half first">
+                    <input id="nome" type="text" name="nome" placeholder="Nome" />
+                  </div>
+                  <div class="field half">
+                    <input type="email" name="email" id="email" placeholder="Email" />
+                  </div>
+                  <div class="field">
+                    <textarea name="messagem" id="message" placeholder="Messagem"></textarea>
+                  </div>
+                  <ul class="actions">
+                    <li><input type="submit" value="Enviar" class="special" /></li>
+                  </ul>
+                </form>
+              </section>
+              <section>
+                <h2>Follow</h2>
+                <ul class="icons">
+                  <li><a target="_blank" href="https://twitter.com/weslley17w" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                  <li><a target="_blank" href="https://www.facebook.com/weslley17w" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                  <li><a target="_blank" href="https://github.com/weslley17w" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+                  <li><a target="_blank" href="malito:weslley17w@gmail.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                </ul>
+              </section>
+              <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="https://weslleybarros.com.br/assets/js/jquery.min.js"></script>
+      <script src="https://weslleybarros.com.br/assets/js/skel.min.js"></script>
+      <script src="https://weslleybarros.com.br/assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="https://weslleybarros.com.br/assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="https://weslleybarros.com.br/assets/js/main.js?version=8"></script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50556632-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+      <link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/androidstudio.min.css">
+      <script src="https://weslleybarros.com.br/assets/js/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
+<!DOCTYPE HTML>
+<html lang="pt-br" manifest="https://weslleybarros.com.br/blog.appcache">
+   <head>
+   <meta charset="utf-8">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+   <link rel="alternate" href="https://weslleybarros.com.br" hreflang="pt-BR">
+   <link href="http://gmpg.org/xfn/11" rel="profile">
+   <meta name="HandheldFriendly" content="True">
+   <meta name="MobileOptimized" content="320">
+   <meta name="theme-color" content="#005344">
+   <title>Resumo Aula 1 MongoDB</title>
+   <meta name="google-site-verification" content="zS1dSn20XtA4FJYEOQLXqI0boxZdMnJ2g3beje-cl20">
+   <meta name="description" content="Resumo Aula 1 - MongoDB">
+   <!-- Social: Facebook / Open Graph -->
+   <meta property="og:url" content="https://weslleybarros.com.br">
+   <meta property="og:title" content="Resumo Aula 1 MongoDB">
+   <meta property="og:description" content="Resumo Aula 1 - MongoDB">
+   <meta property="og:site_name" content="Weslley Barros">
+   <meta property="og:locale" content="pt_BR">
+   <meta property="og:type" content="website">
+   <meta property="og:author" content="http://facebook.com/weslley17w">
+   <meta property="og:image" content="https://weslleybarros.com.br">
+   <!-- Social: Twitter -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@weslley17w">
+   <meta name="twitter:domain" content="https://weslleybarros.com.br">
+   <meta name="twitter:title" content="Resumo Aula 1 MongoDB">
+   <meta name="twitter:description" content="Resumo Aula 1 - MongoDB">
+   <meta name="twitter:image:src" content="http://nandomoreira.me">
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="114x114" href="">
+   <link rel="apple-touch-icon" sizes="72x72" href="">
+   <link rel="apple-touch-icon" href="">
+   <link rel="shortcut icon" href="">
+   <link rel="canonical" href="https://weslleybarros.com.br">
+   <link rel="alternate" type="application/rss+xml" title="Weslley Barros" href="https://weslleybarros.com.br/feed.xml">
+   <link rel="icon" type="image/png" href="https://weslleybarros.com.br/assets/img/mug.png" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <!--[if lte IE 8]><script src="https://weslleybarros.com.br/assets/js/ie/html5shiv.js"></script><![endif]-->
+   <link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/main.css?version=3.2" />
+   <!--[if lte IE 9]><link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/ie9.css" /><![endif]-->
+   <!--[if lte IE 8]><link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/ie8.css" /><![endif]-->
+</head>
+
+  <body>
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+          <header id="header">
+            <div class="inner">
+
+              <!-- Logo -->
+                <a href="index.html" class="logo">
+                  <span class="symbol"><img src="https://weslleybarros.com.br/assets/img/logo.jpg" alt="" /></span><span class="title">Weslley Barros</span>
+                </a>
+
+              <!-- Nav -->
+                <nav>
+                  <ul>
+                    <li><a href="#menu">Menu</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+            
+               <li><a href="/">Home</a></li>
+            
+               <li><a href="/feed">Feed</a></li>
+            
+            </ul>
+          </nav>
+
+        <!-- Main -->
+          <div id="main">
+            <div class="inner">
+            
+              <section class="tiles">
+              
+                				<!-- Main -->
+					<div id="main">
+						<div class="merda">
+							<h1>Resumo Aula 1 MongoDB</h1>
+							<p>Nessa primeira aula nós vamos fica apenas na teoria, Resumo rapido vamos fala sobre bancos NoSQL.</p>
+
+<p>Nosql são bancos não relacionais ao contrário de que muitos pensam eles não são bancos que não usa “SQL”, Acredite se quiser existe banco nosql que usa sql para fazer consultas.</p>
+
+<h2 id="alguns-exemplos-de-bancos-nosql-que-usa-sql-so-o-casandra-e-o-orientdb">Alguns exemplos de bancos nosql que usa SQL são o Casandra e o OrientDB:</h2>
+
+<p>vamos a alguns comandos do Cassandra</p>
+
+<hr />
+
+<h2 id="syntax">Syntax</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>USE mykeyspace;
+
+CREATE TABLE users (
+user_id int PRIMARY KEY,
+fname text,
+lname text
+);
+
+
+INSERT INTO users (user_id,  fname, lname)
+VALUES (1745, 'john', 'smith');
+INSERT INTO users (user_id,  fname, lname)
+VALUES (1744, 'john', 'doe');
+INSERT INTO users (user_id,  fname, lname)
+VALUES (1746, 'john', 'smith');
+</code></pre>
+</div>
+
+<hr />
+
+<p>vamos a alguns comandos do OrientDB</p>
+
+<h2 id="syntax-1">Syntax</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>SELECT [&lt;Projections&gt;] [FROM &lt;Target&gt; [LET &lt;Assignment&gt;*]]
+[WHERE &lt;Condition&gt;*]
+[GROUP BY &lt;Field&gt;*]
+[ORDER BY &lt;Fields&gt;* [ASC|DESC] *]
+[SKIP &lt;SkipRecords&gt;]
+[LIMIT &lt;MaxRecords&gt;]
+[FETCHPLAN &lt;FetchPlan&gt;]
+</code></pre>
+</div>
+
+<blockquote>
+  <p><strong>Nota:</strong>
+Isso lhe lembra á alguma coisa ? 
+“ae muleque se é pika mesmo em ! “<br />
+Claro que lhe lembra o Sql ou Mysql, postgresql, Sql Server…</p>
+</blockquote>
+
+<h2 id="e-agora-tiro-da-sua-cabecinha-que-nosql-no-significa-no-sql">E agora tiro da sua cabecinha que nosql não significa “NÃO SQL”</h2>
+
+<p>Então o que e nosql? ao contrário de banco relacionais que são genericos serve pra tudo que você queira criar exemplos um grafico, sistema de cache e por ai vai.</p>
+
+<p>O banco nosql e diferente e feito para resolver problemas específicos por esse motivo que tem vários tipos de bancos nosql mas fica “sussa”  ae que já nós chega lá, Outra grande diferença e que no banco relacional nos criamos “Regras” antes de começar à inserir dados nele, mas como assim regras Sr Weslley? Ex: Quando criamos um banco mysql para nossa aplicação, nos primeiro criamos o banco em si depois criamos tabelas e depois colunas e criamo uma regra (id -&gt; int -&gt; auto increment ), (name -&gt;varchar -&gt;  length = 255)  isso eu chamo de “Regra” eu acho isso bom pois não te deixa fazer merda no sistema pois não permite nos coloca um valor type text no luga de um de int exemplo, já alguns de nosso bancos nosql deixa nos fazer essa proeza o Mongo e um forte exemplo disso é também á maioria dos bancos nosql não usa joins isso eu acho chato pois temos que mudar toda nossa logica para modelar um banco nosql mas nós se acostumamos rápido. Como já falei bancos nosql são divididos em grupos:</p>
+
+<h2 id="chavevalor">#Chave/Valor</h2>
+
+<ul>
+  <li>Berkeley DB</li>
+  <li>Tokyo Cabinet</li>
+  <li>Project Valdermort</li>
+  <li>MemcacheDB</li>
+  <li>SimpleDB</li>
+</ul>
+
+<h2 id="orientados-a-documentos">#Orientados a Documentos</h2>
+
+<p>Baseado em documentos XML ou Json, podem ser localizados pelo id único ou por qualquer registro que tenha no documento</p>
+
+<ul>
+  <li>CouchDB</li>
+  <li>MongoDB</li>
+  <li>Riak</li>
+  <li>RevenDB</li>
+</ul>
+
+<h2 id="orientado-a-grficos">#Orientado a Gráficos</h2>
+
+<p>São bancos orientados a gráficos ou seja serve pra cria gráfico</p>
+
+<ul>
+  <li>BigTable</li>
+  <li>Neo4J</li>
+  <li>Cassandra</li>
+  <li>HiperTable</li>
+  <li>Hbase</li>
+</ul>
+
+<h2 id="mistos">#Mistos</h2>
+
+<p>Esses são a porra loca eles meio que são parecido com os relacional pois eles servem para para resolver varios problemas</p>
+
+<ul>
+  <li>OrientDB</li>
+  <li>ArangoDB</li>
+  <li>FoundationDB</li>
+  <li>CloudBoost.io</li>
+  <li>MarkLogic</li>
+</ul>
+
+<h2 id="agora-que-sabemos-o-que-e-nosql">Agora Que sabemos o que e nosql!</h2>
+
+<p><img src="http://geradormemes.com/media/created/30hyyi.gif" alt="Imagem engraçada" /></p>
+
+<p>Primeiro vamos instalar o mongo ne jovens, pretendo criar um artigo passo a passo ensinado instalar mongo no Windows e no Linux(Ubuntu) mas isso deixa pra depois, Hoje vamos deixa link da documentação do mongo ensinado.</p>
+
+<p><a href="https://www.mongodb.org/downloads#production">Download Mongo</a> e seja feliz.</p>
+
+<h2 id="terminologia-mongo">Terminologia Mongo</h2>
+<p>Relacional     |  –&gt; NoSQL
+————– |  ——————–
+DATABASE       |  –&gt; DATABASE
+TABLE          |  –&gt; COLLECTION
+ROWS           |  –&gt;  DOCUMENT JSON
+QUERY          |  –&gt; QUERY
+INDEX          |  –&gt; INDEX
+PARTITION      |  –&gt;  SHARD</p>
+
+<h2 id="comandos">#Comandos</h2>
+<p>Comandos aprendidos na aula</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mongod - levanta servido mongo
+mongo - levanta cliente mongo
+mongoimport - importa um coleção
+mongoexport - exporta um coleção  
+</code></pre>
+</div>
+
+<p>Mas como se usa o mongo import e export ? Isso lhe responde ?</p>
+
+<p><strong>mongoexport –db nome_do_database –collection nome_da_colecao –out minha_colecionismo</strong></p>
+
+<p><strong>mongoimport –db database –collection collection –drop –file data.json</strong></p>
+
+						</div>
+					</div>
+
+
+
+              </section>
+            
+
+            
+                 <div id="disqus_thread"></div>
+<script>
+    
+ 
+    var disqus_config = function () {
+        this.page.url = 'https://weslleybarros.com.br/posts/resumo-aula-1-mongodb';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://weslleybarros.com.br'; 
+        };
+   
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//weslley17w.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+            
+       
+            </div>
+          </div>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <section>
+                <h2>Entrar em Contato</h2>
+                <form name="formcontact">
+                  <div class="field half first">
+                    <input id="nome" type="text" name="nome" placeholder="Nome" />
+                  </div>
+                  <div class="field half">
+                    <input type="email" name="email" id="email" placeholder="Email" />
+                  </div>
+                  <div class="field">
+                    <textarea name="messagem" id="message" placeholder="Messagem"></textarea>
+                  </div>
+                  <ul class="actions">
+                    <li><input type="submit" value="Enviar" class="special" /></li>
+                  </ul>
+                </form>
+              </section>
+              <section>
+                <h2>Follow</h2>
+                <ul class="icons">
+                  <li><a target="_blank" href="https://twitter.com/weslley17w" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                  <li><a target="_blank" href="https://www.facebook.com/weslley17w" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                  <li><a target="_blank" href="https://github.com/weslley17w" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+                  <li><a target="_blank" href="malito:weslley17w@gmail.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                </ul>
+              </section>
+              <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="https://weslleybarros.com.br/assets/js/jquery.min.js"></script>
+      <script src="https://weslleybarros.com.br/assets/js/skel.min.js"></script>
+      <script src="https://weslleybarros.com.br/assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="https://weslleybarros.com.br/assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="https://weslleybarros.com.br/assets/js/main.js?version=8"></script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50556632-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+      <link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/androidstudio.min.css">
+      <script src="https://weslleybarros.com.br/assets/js/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
+<!DOCTYPE HTML>
+<html lang="pt-br" manifest="https://weslleybarros.com.br/blog.appcache">
+   <head>
+   <meta charset="utf-8">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+   <link rel="alternate" href="https://weslleybarros.com.br" hreflang="pt-BR">
+   <link href="http://gmpg.org/xfn/11" rel="profile">
+   <meta name="HandheldFriendly" content="True">
+   <meta name="MobileOptimized" content="320">
+   <meta name="theme-color" content="#005344">
+   <title>Mongo Hacker No Windows</title>
+   <meta name="google-site-verification" content="zS1dSn20XtA4FJYEOQLXqI0boxZdMnJ2g3beje-cl20">
+   <meta name="description" content="Tutorial de como intalar mongo hacker no Windows">
+   <!-- Social: Facebook / Open Graph -->
+   <meta property="og:url" content="https://weslleybarros.com.br">
+   <meta property="og:title" content="Mongo Hacker No Windows">
+   <meta property="og:description" content="Tutorial de como intalar mongo hacker no Windows">
+   <meta property="og:site_name" content="Weslley Barros">
+   <meta property="og:locale" content="pt_BR">
+   <meta property="og:type" content="website">
+   <meta property="og:author" content="http://facebook.com/weslley17w">
+   <meta property="og:image" content="https://weslleybarros.com.br">
+   <!-- Social: Twitter -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@weslley17w">
+   <meta name="twitter:domain" content="https://weslleybarros.com.br">
+   <meta name="twitter:title" content="Mongo Hacker No Windows">
+   <meta name="twitter:description" content="Tutorial de como intalar mongo hacker no Windows">
+   <meta name="twitter:image:src" content="http://nandomoreira.me">
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="114x114" href="">
+   <link rel="apple-touch-icon" sizes="72x72" href="">
+   <link rel="apple-touch-icon" href="">
+   <link rel="shortcut icon" href="">
+   <link rel="canonical" href="https://weslleybarros.com.br">
+   <link rel="alternate" type="application/rss+xml" title="Weslley Barros" href="https://weslleybarros.com.br/feed.xml">
+   <link rel="icon" type="image/png" href="https://weslleybarros.com.br/assets/img/mug.png" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <!--[if lte IE 8]><script src="https://weslleybarros.com.br/assets/js/ie/html5shiv.js"></script><![endif]-->
+   <link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/main.css?version=3.2" />
+   <!--[if lte IE 9]><link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/ie9.css" /><![endif]-->
+   <!--[if lte IE 8]><link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/ie8.css" /><![endif]-->
+</head>
+
+  <body>
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+          <header id="header">
+            <div class="inner">
+
+              <!-- Logo -->
+                <a href="index.html" class="logo">
+                  <span class="symbol"><img src="https://weslleybarros.com.br/assets/img/logo.jpg" alt="" /></span><span class="title">Weslley Barros</span>
+                </a>
+
+              <!-- Nav -->
+                <nav>
+                  <ul>
+                    <li><a href="#menu">Menu</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+            
+               <li><a href="/">Home</a></li>
+            
+               <li><a href="/feed">Feed</a></li>
+            
+            </ul>
+          </nav>
+
+        <!-- Main -->
+          <div id="main">
+            <div class="inner">
+            
+              <section class="tiles">
+              
+                				<!-- Main -->
+					<div id="main">
+						<div class="merda">
+							<h1>Mongo Hacker No Windows</h1>
+							<h1 id="instala-mongo-hacker-windows">Instala mongo-hacker Windows</h1>
+
+<p>Comecei o curso ontem e tive um grande problema com o mongo-hacker, passei tarde toda procurando uma solução e finalmente achei. E estou aqui para compartilha-la com vocês para começar já deveremos ter:</p>
+
+<ul>
+  <li>git e gitbash</li>
+  <li>nodejs</li>
+  <li>mongo</li>
+</ul>
+
+<p>Então vamos começar baixando o comando make que o “Ruindows” não nos oferece nativamente, eu recomendo o <a href="https://github.com/user/repo/blob/branch/other_file.md">GNUWIN </a> basta baixar ‘Complete package, except sources’. Depois de baixa-lo e instalá-lo vamos adiciona o arquivo no Path.</p>
+
+<p>Primeiro vamos procurar a pasta raiz onde se localiza o make geralmente fica em 
+“C &gt; Program Files (x86) &gt; GnuWin32 &gt;bin” resumindo “C:\Program Files (x86)\GnuWin32\bin”</p>
+
+<p><img src="http://i.imgur.com/KjWOlNy.png" alt="alt tag" /></p>
+
+<p>Caso você ache um ícone chifrudo com nome make deu tudo certo basta copiar url. Então vamos ao host caso você use Windows 8, 8.1 e 10 siga este passo caso use outra versão pesquise no Pai-dos-burros(Google) “Como mudar o PATH nos Windows”. Quem usa o 8, 8.1 e 10 siga em frente</p>
+
+<p>Click com o botão direito do seu mouse na bandeira do Windows.
+<img src="http://i.imgur.com/ihc8NHy.png" alt="alt tag" /></p>
+
+<p>Click em sistema</p>
+
+<p><img src="http://i.imgur.com/pvOPXK8.png" alt="alt tag" /></p>
+
+<p>Clique em Configurações Avançadas</p>
+
+<p><img src="http://i.imgur.com/fsAymza.png" alt="alt tag" /></p>
+
+<p>Variáveis de ambiente…</p>
+
+<p><img src="http://i.imgur.com/kXxgsf8.png" alt="alt tag" /></p>
+
+<p>Selecione path e clique em editar</p>
+
+<p><img src="http://i.imgur.com/hW31Hl7.png" alt="alt tag" /></p>
+
+<p>Vá até final da linha coloque um “ ; ” (Ponto e virgula)no final caso não aja e cole o diretório que nos acho lá em cima</p>
+
+<p><img src="http://i.imgur.com/lrgWeed.png" alt="alt tag" /></p>
+
+<p>Pronto instalamos o make no Windows agora vamos testa abra o GIT BASH pelo amor de tudo que e mais sagrado, Não use o CMD(aquela porcaria). Com o git bash aberto digite</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>make
+</code></pre>
+</div>
+
+<p><img src="http://i.imgur.com/b4Tnhc2.png" alt="alt tag" /></p>
+
+<p>Caso receba essa mensagem tudo deu certo, caso não aparece essa mensagem reinicia Windows e digite de novo.</p>
+
+<p>Agora vamos instala o mongo-hacker. Primeiro clone o repositório na pasta dos repositórios do npp para organiza</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> <span class="s1">'C:\Users\wesll\AppData\Roaming\npm\node_modules'</span>
+</code></pre>
+</div>
+
+<p>obs: caso a pasta node_modules não exista, você deve cria-la</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd</span> <span class="s1">'C:\Users\wesll\AppData\Roaming\npm\'</span>
+</code></pre>
+</div>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>mkdir node_modules
+</code></pre>
+</div>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd </span>node_modules
+</code></pre>
+</div>
+
+<p>Dentro da pasta node_modules no terminal</p>
+
+<p>Clone o repositório</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>git clone https://github.com/TylerBrock/mongo-hacker.git
+</code></pre>
+</div>
+
+<p>Agora vamos configura ló para não ficar exibindo umas mensagens de erro chata</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cd </span>mongo-hacker
+</code></pre>
+</div>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>notepad config.js
+</code></pre>
+</div>
+
+<p>Agora vamos mudar duas variáveis á windows_warning e force_color 
+á windows_warning ficara false e force_color true</p>
+
+<p><img src="http://i.imgur.com/GowCCAl.png" alt="alt tag" /></p>
+
+<p>Agora só instalar o mongo hacker com o</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>make install
+</code></pre>
+</div>
+
+<p>Pronto mongo-hacker instalado com sucesso</p>
+
+<p><img src="http://i.imgur.com/xEx3QKW.png" alt="alt tag" /></p>
+
+<p>aeeeeeeeeeee agora nosso console fico ‘bunitinho’</p>
+
+
+						</div>
+					</div>
+
+
+
+              </section>
+            
+
+            
+                 <div id="disqus_thread"></div>
+<script>
+    
+ 
+    var disqus_config = function () {
+        this.page.url = 'https://weslleybarros.com.br/posts/mongo-hacker-no-windows';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://weslleybarros.com.br'; 
+        };
+   
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//weslley17w.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+            
+       
+            </div>
+          </div>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <section>
+                <h2>Entrar em Contato</h2>
+                <form name="formcontact">
+                  <div class="field half first">
+                    <input id="nome" type="text" name="nome" placeholder="Nome" />
+                  </div>
+                  <div class="field half">
+                    <input type="email" name="email" id="email" placeholder="Email" />
+                  </div>
+                  <div class="field">
+                    <textarea name="messagem" id="message" placeholder="Messagem"></textarea>
+                  </div>
+                  <ul class="actions">
+                    <li><input type="submit" value="Enviar" class="special" /></li>
+                  </ul>
+                </form>
+              </section>
+              <section>
+                <h2>Follow</h2>
+                <ul class="icons">
+                  <li><a target="_blank" href="https://twitter.com/weslley17w" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                  <li><a target="_blank" href="https://www.facebook.com/weslley17w" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                  <li><a target="_blank" href="https://github.com/weslley17w" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+                  <li><a target="_blank" href="malito:weslley17w@gmail.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                </ul>
+              </section>
+              <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="https://weslleybarros.com.br/assets/js/jquery.min.js"></script>
+      <script src="https://weslleybarros.com.br/assets/js/skel.min.js"></script>
+      <script src="https://weslleybarros.com.br/assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="https://weslleybarros.com.br/assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="https://weslleybarros.com.br/assets/js/main.js?version=8"></script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50556632-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+      <link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/androidstudio.min.css">
+      <script src="https://weslleybarros.com.br/assets/js/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
+<!DOCTYPE HTML>
+<html lang="pt-br" manifest="https://weslleybarros.com.br/blog.appcache">
+   <head>
+   <meta charset="utf-8">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+   <link rel="alternate" href="https://weslleybarros.com.br" hreflang="pt-BR">
+   <link href="http://gmpg.org/xfn/11" rel="profile">
+   <meta name="HandheldFriendly" content="True">
+   <meta name="MobileOptimized" content="320">
+   <meta name="theme-color" content="#005344">
+   <title>Hello World, Welcome to my “Brog”</title>
+   <meta name="google-site-verification" content="zS1dSn20XtA4FJYEOQLXqI0boxZdMnJ2g3beje-cl20">
+   <meta name="description" content="Hello World, Welcome to my “Brog”">
+   <!-- Social: Facebook / Open Graph -->
+   <meta property="og:url" content="https://weslleybarros.com.br">
+   <meta property="og:title" content="Hello World, Welcome to my “Brog”">
+   <meta property="og:description" content="Hello World, Welcome to my “Brog”">
+   <meta property="og:site_name" content="Weslley Barros">
+   <meta property="og:locale" content="pt_BR">
+   <meta property="og:type" content="website">
+   <meta property="og:author" content="http://facebook.com/weslley17w">
+   <meta property="og:image" content="https://weslleybarros.com.br">
+   <!-- Social: Twitter -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@weslley17w">
+   <meta name="twitter:domain" content="https://weslleybarros.com.br">
+   <meta name="twitter:title" content="Hello World, Welcome to my “Brog”">
+   <meta name="twitter:description" content="Hello World, Welcome to my “Brog”">
+   <meta name="twitter:image:src" content="http://nandomoreira.me">
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="114x114" href="">
+   <link rel="apple-touch-icon" sizes="72x72" href="">
+   <link rel="apple-touch-icon" href="">
+   <link rel="shortcut icon" href="">
+   <link rel="canonical" href="https://weslleybarros.com.br">
+   <link rel="alternate" type="application/rss+xml" title="Weslley Barros" href="https://weslleybarros.com.br/feed.xml">
+   <link rel="icon" type="image/png" href="https://weslleybarros.com.br/assets/img/mug.png" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <!--[if lte IE 8]><script src="https://weslleybarros.com.br/assets/js/ie/html5shiv.js"></script><![endif]-->
+   <link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/main.css?version=3.2" />
+   <!--[if lte IE 9]><link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/ie9.css" /><![endif]-->
+   <!--[if lte IE 8]><link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/ie8.css" /><![endif]-->
+</head>
+
+  <body>
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+          <header id="header">
+            <div class="inner">
+
+              <!-- Logo -->
+                <a href="index.html" class="logo">
+                  <span class="symbol"><img src="https://weslleybarros.com.br/assets/img/logo.jpg" alt="" /></span><span class="title">Weslley Barros</span>
+                </a>
+
+              <!-- Nav -->
+                <nav>
+                  <ul>
+                    <li><a href="#menu">Menu</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+          </header>
+
+        <!-- Menu -->
+          <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+            
+               <li><a href="/">Home</a></li>
+            
+               <li><a href="/feed">Feed</a></li>
+            
+            </ul>
+          </nav>
+
+        <!-- Main -->
+          <div id="main">
+            <div class="inner">
+            
+              <section class="tiles">
+              
+                				<!-- Main -->
+					<div id="main">
+						<div class="merda">
+							<h1>Hello World, Welcome to my “Brog”</h1>
+							<p>Esse e meu primeiro post nesse “Brog”, Que sou eu ? Apenas um Jovem Apaixonado por Progamação e pelo mundo Open Source. O que teremos aqui? De tudo um pouco mais será geralmente algo relacionado com progamação e Codificação (HTML,CSS,JS,NodeJS,Mongo…), Mais Weslley  pra que isso? Mas ora pra tentar compartilha o que eu sei. Tchau, ate breve</p>
+
+						</div>
+					</div>
+
+
+
+              </section>
+            
+
+            
+                 <div id="disqus_thread"></div>
+<script>
+    
+ 
+    var disqus_config = function () {
+        this.page.url = 'https://weslleybarros.com.br/posts/hello-world-welcome-to-my-brog';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://weslleybarros.com.br'; 
+        };
+   
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//weslley17w.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+            
+       
+            </div>
+          </div>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <div class="inner">
+              <section>
+                <h2>Entrar em Contato</h2>
+                <form name="formcontact">
+                  <div class="field half first">
+                    <input id="nome" type="text" name="nome" placeholder="Nome" />
+                  </div>
+                  <div class="field half">
+                    <input type="email" name="email" id="email" placeholder="Email" />
+                  </div>
+                  <div class="field">
+                    <textarea name="messagem" id="message" placeholder="Messagem"></textarea>
+                  </div>
+                  <ul class="actions">
+                    <li><input type="submit" value="Enviar" class="special" /></li>
+                  </ul>
+                </form>
+              </section>
+              <section>
+                <h2>Follow</h2>
+                <ul class="icons">
+                  <li><a target="_blank" href="https://twitter.com/weslley17w" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                  <li><a target="_blank" href="https://www.facebook.com/weslley17w" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                  <li><a target="_blank" href="https://github.com/weslley17w" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+                  <li><a target="_blank" href="malito:weslley17w@gmail.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                </ul>
+              </section>
+              <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              </ul>
+            </div>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="https://weslleybarros.com.br/assets/js/jquery.min.js"></script>
+      <script src="https://weslleybarros.com.br/assets/js/skel.min.js"></script>
+      <script src="https://weslleybarros.com.br/assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="https://weslleybarros.com.br/assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="https://weslleybarros.com.br/assets/js/main.js?version=8"></script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50556632-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+      <link rel="stylesheet" href="https://weslleybarros.com.br/assets/css/androidstudio.min.css">
+      <script src="https://weslleybarros.com.br/assets/js/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
 
 
 #CSS
