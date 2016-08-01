@@ -4,10 +4,10 @@
     <title>Weslley Barros | Desenvolvedor Front-End e Back-End</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://127.0.0.1:4000/</link>
-    <atom:link href="http://127.0.0.1:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Aug 2016 10:40:47 -0300</pubDate>
-    <lastBuildDate>Mon, 01 Aug 2016 10:40:47 -0300</lastBuildDate>
+    <link>https://weslleybarros.com.br/</link>
+    <atom:link href="https://weslleybarros.com.br/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 01 Aug 2016 10:43:38 -0300</pubDate>
+    <lastBuildDate>Mon, 01 Aug 2016 10:43:38 -0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -120,8 +120,8 @@ O find e temporário ou seja você usa uma vez e ele limpa ou seja se você vai 
 &lt;/blockquote&gt;
 </description>
         <pubDate>Sat, 19 Dec 2015 08:18:07 -0200</pubDate>
-        <link>http://127.0.0.1:4000/posts/resumo-aula-2-mongodb</link>
-        <guid isPermaLink="true">http://127.0.0.1:4000/posts/resumo-aula-2-mongodb</guid>
+        <link>https://weslleybarros.com.br/posts/resumo-aula-2-mongodb</link>
+        <guid isPermaLink="true">https://weslleybarros.com.br/posts/resumo-aula-2-mongodb</guid>
         
         
       </item>
@@ -267,8 +267,8 @@ mongoexport - exporta um coleção
 &lt;p&gt;&lt;strong&gt;mongoimport –db database –collection collection –drop –file data.json&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 10 Dec 2015 23:39:11 -0200</pubDate>
-        <link>http://127.0.0.1:4000/posts/resumo-aula-1-mongodb</link>
-        <guid isPermaLink="true">http://127.0.0.1:4000/posts/resumo-aula-1-mongodb</guid>
+        <link>https://weslleybarros.com.br/posts/resumo-aula-1-mongodb</link>
+        <guid isPermaLink="true">https://weslleybarros.com.br/posts/resumo-aula-1-mongodb</guid>
         
         
       </item>
@@ -384,8 +384,8 @@ mongoexport - exporta um coleção
 
 </description>
         <pubDate>Wed, 09 Dec 2015 10:32:45 -0200</pubDate>
-        <link>http://127.0.0.1:4000/posts/mongo-hacker-no-windows</link>
-        <guid isPermaLink="true">http://127.0.0.1:4000/posts/mongo-hacker-no-windows</guid>
+        <link>https://weslleybarros.com.br/posts/mongo-hacker-no-windows</link>
+        <guid isPermaLink="true">https://weslleybarros.com.br/posts/mongo-hacker-no-windows</guid>
         
         
       </item>
@@ -395,8 +395,8 @@ mongoexport - exporta um coleção
         <description>&lt;p&gt;Esse e meu primeiro post nesse “Brog”, Que sou eu ? Apenas um Jovem Apaixonado por Progamação e pelo mundo Open Source. O que teremos aqui? De tudo um pouco mais será geralmente algo relacionado com progamação e Codificação (HTML,CSS,JS,NodeJS,Mongo…), Mais Weslley  pra que isso? Mas ora pra tentar compartilha o que eu sei. Tchau, ate breve&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Dec 2015 23:25:40 -0200</pubDate>
-        <link>http://127.0.0.1:4000/posts/hello-world-welcome-to-my-brog</link>
-        <guid isPermaLink="true">http://127.0.0.1:4000/posts/hello-world-welcome-to-my-brog</guid>
+        <link>https://weslleybarros.com.br/posts/hello-world-welcome-to-my-brog</link>
+        <guid isPermaLink="true">https://weslleybarros.com.br/posts/hello-world-welcome-to-my-brog</guid>
         
         
       </item>
