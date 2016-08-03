@@ -1764,8 +1764,8 @@
 		@media screen and (max-width: 360px) {
 
 			h1 {
-				font-size: 1.50em;
-				max-width: 56%;
+				font-size: 1.75em;
+				max-width: 50%;
 			}
 
 			blockquote{
@@ -1776,7 +1776,7 @@
 				word-wrap: break-word;      /* IE */
 			}
 
-			blockquote,code,h2,hr{width: 56%;}
+			blockquote,code,h2,hr{width: 50%;}
 
 		}
 
