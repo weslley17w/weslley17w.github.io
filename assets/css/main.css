@@ -1765,10 +1765,10 @@
 
 			h1 {
 				font-size: 1.75em;
-				max-width: 40%;
+				max-width: 56%;
 			}
 
-			blockquote{
+			blockquote,p{
 				white-space: pre-wrap;      /* CSS3 */
 				white-space: -moz-pre-wrap; /* Firefox */
 				white-space: -pre-wrap;     /* Opera <7 */
@@ -1776,7 +1776,7 @@
 				word-wrap: break-word;      /* IE */
 			}
 
-			blockquote,code,h2,hr{width: 40%;}
+			blockquote,code,h2,hr{width: 56%;}
 
 		}
 
