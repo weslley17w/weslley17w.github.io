@@ -6,8 +6,8 @@
 </description>
     <link>https://weslleybarros.com.br/</link>
     <atom:link href="https://weslleybarros.com.br/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 Aug 2016 23:02:02 -0300</pubDate>
-    <lastBuildDate>Tue, 02 Aug 2016 23:02:02 -0300</lastBuildDate>
+    <pubDate>Tue, 02 Aug 2016 23:26:27 -0300</pubDate>
+    <lastBuildDate>Tue, 02 Aug 2016 23:26:27 -0300</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -290,32 +290,32 @@ mongoexport - exporta um coleção
 &lt;p&gt;Primeiro vamos procurar a pasta raiz onde se localiza o make geralmente fica em 
 “C &amp;gt; Program Files (x86) &amp;gt; GnuWin32 &amp;gt;bin” resumindo “C:\Program Files (x86)\GnuWin32\bin”&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/KjWOlNy.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/KjWOlNy.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Caso você ache um ícone chifrudo com nome make deu tudo certo basta copiar url. Então vamos ao host caso você use Windows 8, 8.1 e 10 siga este passo caso use outra versão pesquise no Pai-dos-burros(Google) “Como mudar o PATH nos Windows”. Quem usa o 8, 8.1 e 10 siga em frente&lt;/p&gt;
 
 &lt;p&gt;Click com o botão direito do seu mouse na bandeira do Windows.
-&lt;img src=&quot;http://i.imgur.com/ihc8NHy.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/ihc8NHy.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click em sistema&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/pvOPXK8.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/pvOPXK8.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Clique em Configurações Avançadas&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/fsAymza.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/fsAymza.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Variáveis de ambiente…&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/kXxgsf8.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/kXxgsf8.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Selecione path e clique em editar&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/hW31Hl7.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/hW31Hl7.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Vá até final da linha coloque um “ ; ” (Ponto e virgula)no final caso não aja e cole o diretório que nos acho lá em cima&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/lrgWeed.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/lrgWeed.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Pronto instalamos o make no Windows agora vamos testa abra o GIT BASH pelo amor de tudo que e mais sagrado, Não use o CMD(aquela porcaria). Com o git bash aberto digite&lt;/p&gt;
 
@@ -323,7 +323,7 @@ mongoexport - exporta um coleção
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/b4Tnhc2.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/b4Tnhc2.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Caso receba essa mensagem tudo deu certo, caso não aparece essa mensagem reinicia Windows e digite de novo.&lt;/p&gt;
 
@@ -368,7 +368,7 @@ mongoexport - exporta um coleção
 &lt;p&gt;Agora vamos mudar duas variáveis á windows_warning e force_color 
 á windows_warning ficara false e force_color true&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/GowCCAl.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/GowCCAl.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Agora só instalar o mongo hacker com o&lt;/p&gt;
 
@@ -378,7 +378,7 @@ mongoexport - exporta um coleção
 
 &lt;p&gt;Pronto mongo-hacker instalado com sucesso&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/xEx3QKW.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://weslleybarros.com.br/assets/posts/mongo-hacker-no-windows/xEx3QKW.png&quot; alt=&quot;alt tag&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;aeeeeeeeeeee agora nosso console fico ‘bunitinho’&lt;/p&gt;
 
