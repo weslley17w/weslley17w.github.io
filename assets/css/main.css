@@ -1766,7 +1766,7 @@
 
 			h1 {
 				font-size: 1.75em;
-				max-width: 25%;
+				max-width: 50%;
 			}
 
 			blockquote{
@@ -1777,7 +1777,7 @@
 				word-wrap: break-word;      /* IE */
 			}
 
-			blockquote,code,h2,hr{width: 25%;}
+			blockquote,code,h2,hr{width: 50%;}
 
 		}
 
