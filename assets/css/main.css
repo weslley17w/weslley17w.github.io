@@ -1722,24 +1722,6 @@
 		}
 
 
-     @media screen and (max-width: 440px) {
-
-	   h1 {
-		font-size: 1.75em;
-		width: 80%;
-	    }
-
-		 h2,hr{width: 80%;}
-		 blockquote{
-			 white-space: pre-wrap;      /* CSS3 */
-			 white-space: -moz-pre-wrap; /* Firefox */
-			 white-space: -pre-wrap;     /* Opera <7 */
-			 white-space: -o-pre-wrap;   /* Opera 7 */
-			 word-wrap: break-word;      /* IE */
-		 }
-		 blockquote,code{width: 70%;}
-
-       }
 
 @media screen and (max-width: 550px) {
 
@@ -1757,6 +1739,25 @@
 		word-wrap: break-word;      /* IE */
 	}
 	blockquote,code{width: 80%;}
+
+}
+
+@media screen and (max-width: 440px) {
+
+	h1 {
+		font-size: 1.75em;
+		width: 80%;
+	}
+
+	h2,hr{width: 80%;}
+	blockquote{
+		white-space: pre-wrap;      /* CSS3 */
+		white-space: -moz-pre-wrap; /* Firefox */
+		white-space: -pre-wrap;     /* Opera <7 */
+		white-space: -o-pre-wrap;   /* Opera 7 */
+		word-wrap: break-word;      /* IE */
+	}
+	blockquote,code{width: 70%;}
 
 }
 
