@@ -1776,7 +1776,7 @@
 				word-wrap: break-word;      /* IE */
 			}
 
-			blockquote,code,h2,hr{max-width: 56%;}
+			blockquote,code,h2,hr{width: 56%;}
 
 		}
 
